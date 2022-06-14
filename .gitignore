@@ -1,0 +1,55 @@
+node_modules
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+/.gitignore
+/src/main/resources/application.properties
+/frontend/index.html
+/frontend/generated/index.ts
+/src/main/java/com/lvlMaHa/maHafrontend/MaHaFrontendApplication.java
+/src/test/java/com/lvlMaHa/maHafrontend/MaHaFrontendApplicationTests.java
+/src/main/java/com/lvlMaHa/maHafrontend/view/MainView.java
+/.mvn/wrapper/maven-wrapper.jar
+/.mvn/wrapper/maven-wrapper.properties
+/mvnw
+/mvnw.cmd
+/package.json
+/package-lock.json
+/pom.xml
+/src/main/java/com/lvlMaHa/maHafrontend/util/TabsUtil.java
+/tsconfig.json
+/types.d.ts
+/frontend/generated/vaadin.ts
+/frontend/generated/vaadin-featureflags.ts
+/webpack.config.js
+/webpack.generated.js
