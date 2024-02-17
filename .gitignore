@@ -36,9 +36,9 @@ build/
 /src/main/resources/application.properties
 /frontend/index.html
 /frontend/generated/index.ts
-/src/main/java/com/lvlMaHa/maHafrontend/MaHaFrontendApplication.java
+/src/main/java/ru/panifidkin/lvlprojectfrontend/MaHaFrontendApplication.java
 /src/test/java/com/lvlMaHa/maHafrontend/MaHaFrontendApplicationTests.java
-/src/main/java/com/lvlMaHa/maHafrontend/view/MainView.java
+/src/main/java/ru/panifidkin/lvlprojectfrontend/view/MainLayout.java
 /.mvn/wrapper/maven-wrapper.jar
 /.mvn/wrapper/maven-wrapper.properties
 /mvnw
@@ -46,7 +46,7 @@ build/
 /package.json
 /package-lock.json
 /pom.xml
-/src/main/java/com/lvlMaHa/maHafrontend/util/TabsUtil.java
+/src/main/java/ru/panifidkin/lvlprojectfrontend/util/TabsUtil.java
 /tsconfig.json
 /types.d.ts
 /frontend/generated/vaadin.ts

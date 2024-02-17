@@ -1,47 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.0</version>
-		<relativePath/>
-	</parent>
-	<groupId>com.lvlMaHa</groupId>
-	<artifactId>maHa-frontend</artifactId>
+
+	<groupId>ru.panifidkin.lvl-project-frontend</groupId>
+	<artifactId>lvl-project-frontend</artifactId>
+	<name>Lvl project frontend</name>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>maHa-frontend</name>
-	<description>project for Spring Boot</description>
+
 	<properties>
-		<java.version>11</java.version>
-		<vaadin.version>23.0.11</vaadin.version>
+		<java.version>17</java.version>
+		<vaadin.version>24.3.5</vaadin.version>
+		<spring.boot.version>3.2.2</spring.boot.version>
+		<lombok.version>1.18.30</lombok.version>
+		<spring-devtools.version>3.2.2</spring-devtools.version>
+		<spring-web.version>3.2.2</spring-web.version>
 	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -53,22 +29,61 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring-web.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<version>${spring-devtools.version}</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-spring-boot-starter</artifactId>
+			<version>${vaadin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.10.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>5.10.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>5.7.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.24.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>3.2.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
 	<profiles>
 		<profile>
 			<id>production</id>
@@ -86,9 +101,6 @@
 									<goal>prepare-frontend</goal>
 									<goal>build-frontend</goal>
 								</goals>
-								<configuration>
-									<productionMode>true</productionMode>
-								</configuration>
 							</execution>
 						</executions>
 					</plugin>
@@ -96,4 +108,48 @@
 			</build>
 		</profile>
 	</profiles>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring.boot.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.12.0</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<encoding>UTF-8</encoding>
+						<annotationProcessorPaths>
+							<path>
+								<groupId>org.projectlombok</groupId>
+								<artifactId>lombok</artifactId>
+								<version>${lombok.version}</version>
+							</path>
+						</annotationProcessorPaths>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.4.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<version>3.4.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.2.3</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
