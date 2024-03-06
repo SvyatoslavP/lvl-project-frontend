@@ -1,0 +1,42 @@
+#accounting-title-id {
+    margin-top: 20px;
+}
+
+#user-card-id {
+    height: 400px;
+    max-width: 100%;
+    width: 360px;
+    border: cornflowerblue;
+    margin: 30px;
+}
+
+#rating-tables {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+#rating-tables2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+#rating-table-platinum-super-division-id {
+    margin: 20px;
+}
+
+#rating-table-gold-top-division-id {
+    margin: 20px;
+}
+
+#rating-table-silver-premier-division-id {
+    margin: 20px;
+}
+
+#rating-table-bronze-lite-start-id {
+    margin: 20px;
+}
+
