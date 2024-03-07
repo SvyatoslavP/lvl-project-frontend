@@ -40,7 +40,10 @@ public class UserCardView extends VerticalLayout {
         Div container = new Div(personalInformation, accountingInformation);
         add(container);
 
-        // Footer
+        addFooter();
+    }
+
+    private void addFooter() {
         Button save = new Button("Save");
         save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         save.getStyle().set("margin-right", "var(--lumo-space-s)");
@@ -51,7 +54,6 @@ public class UserCardView extends VerticalLayout {
         Footer footer = new Footer(save, reset);
         footer.getStyle().set("padding", "var(--lumo-space-wide-m)");
         add(footer);
-
     }
 
     private Section getPersonalInformation() {

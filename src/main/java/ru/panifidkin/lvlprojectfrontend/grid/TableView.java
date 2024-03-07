@@ -79,13 +79,11 @@ public class TableView extends Div implements AppShellConfigurator {
         return grid;
     }
 
-    private static final DateTimeFormatter birthdayFormatter = DateTimeFormatter
-            .ofPattern("yyyy-MM-dd");
+    private static final DateTimeFormatter birthdayFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     private int getPersonAge(Team team) {
         LocalDate birthday = team.getBirthday();
-        return LocalDate.now(ZoneId.systemDefault()).getYear()
-                - birthday.getYear();
+        return LocalDate.now(ZoneId.systemDefault()).getYear() - birthday.getYear();
     }
 
     private String getFormattedTeamBirthday(Team team) {
