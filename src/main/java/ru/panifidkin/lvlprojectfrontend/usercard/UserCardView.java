@@ -15,13 +15,15 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import ru.panifidkin.lvlprojectfrontend.view.MainNavigation;
+import ru.panifidkin.lvlprojectfrontend.view.MainNavigationView;
 
 import java.time.LocalDate;
 
-@Route(value = "user-card", layout = MainNavigation.class)
-public class UserCard extends VerticalLayout {
+@Route(value = "lvl/user-card", layout = MainNavigationView.class)
+@PageTitle("ЛВЛ МАНА")
+public class UserCardView extends VerticalLayout {
 
     public static final String PERSONAL_TITLE_ID = "personal-title-id";
     public static final String ACCOUNTING_TITLE_ID = "accounting-title-id";
@@ -30,7 +32,7 @@ public class UserCard extends VerticalLayout {
     private Icon checkIcon;
     private Span passwordStrengthText;
 
-    public UserCard() {
+    public UserCardView() {
         setId(USER_CARD_ID);
         Section personalInformation = getPersonalInformation();
         Section accountingInformation = getAccountingInformation();

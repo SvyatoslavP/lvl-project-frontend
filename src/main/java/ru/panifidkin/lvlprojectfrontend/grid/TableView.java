@@ -5,10 +5,11 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.page.AppShellConfigurator;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.Theme;
 import ru.panifidkin.lvlprojectfrontend.dto.Team;
-import ru.panifidkin.lvlprojectfrontend.view.MainNavigation;
+import ru.panifidkin.lvlprojectfrontend.view.MainNavigationView;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -16,9 +17,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-@Route(value = "table", layout = MainNavigation.class)
+@Route(value = "lvl/table", layout = MainNavigationView.class)
 @Theme("my-theme")
-public class Table extends Div implements AppShellConfigurator {
+@PageTitle("ЛВЛ МАНА")
+public class TableView extends Div implements AppShellConfigurator {
     private final static String COLUMN_NAME_TEAM = "Название";
     private final static String COLUMN_FOUNDER_TEAM = "Учредитель";
     private final static String COLUMN_RATING_TEAM = "Рейтинг";
@@ -30,7 +32,7 @@ public class Table extends Div implements AppShellConfigurator {
     private final static String SILVER_PREMIER_DIVISION_TABLE_ID = "rating-table-silver-premier-division-id";
     private final static String BRONZE_LITE_START_TABLE_ID = "rating-table-bronze-lite-start-id";
 
-    public Table() {
+    public TableView() {
         Div container = new Div(getGrid(PLATINUM_SUPER_DIVISION_TABLE_ID),
                 getGrid(GOLD_TOP_DIVISION_TABLE_ID));
         container.setId("rating-tables");

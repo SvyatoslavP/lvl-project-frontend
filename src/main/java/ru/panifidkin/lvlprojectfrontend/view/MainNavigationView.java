@@ -16,11 +16,11 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
-@Route("")
+@Route("lvl")
 @PageTitle("ЛВЛ МАНА")
-public class MainNavigation extends AppLayout {
+public class MainNavigationView extends AppLayout {
 
-    public MainNavigation() {
+    public MainNavigationView() {
 
         SideNav views = getPrimaryNavigation();
 
@@ -64,19 +64,19 @@ public class MainNavigation extends AppLayout {
     private SideNav getPrimaryNavigation() {
         SideNav sideNav = new SideNav();
         sideNav.addItem(
-                new SideNavItem("Профиль", "/user-card",
+                new SideNavItem("Профиль", "lvl/user-card",
                         VaadinIcon.USER_CARD.create()),
-                new SideNavItem("Таблица", "/table",
+                new SideNavItem("Таблица", "lvl/table",
                         VaadinIcon.TABLE.create()),
-                new SideNavItem("Команды", "/orders",
+                new SideNavItem("Команды", "lvl/orders",
                         VaadinIcon.USERS.create()),
-                new SideNavItem("Рейтинг", "/customers",
+                new SideNavItem("Рейтинг", "lvl/customers",
                         VaadinIcon.CHART_LINE.create()),
-                new SideNavItem("Статистика", "/products",
+                new SideNavItem("Статистика", "lvl/products",
                         VaadinIcon.CHART_GRID.create()),
-                new SideNavItem("Фото", "/photos",
+                new SideNavItem("Фото", "lvl/photos",
                         VaadinIcon.PICTURE.create()),
-                new SideNavItem("You Tube", "/video",
+                new SideNavItem("You Tube", "lvl/video",
                         VaadinIcon.YOUTUBE.create())
         );
         return sideNav;
